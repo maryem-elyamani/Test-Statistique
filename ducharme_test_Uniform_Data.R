@@ -87,9 +87,14 @@ for (j in 1:M)
 }
 Dobs
 print("finished")
-plot(sc_s)
+plot(sc_s, type="l")
 print("finished: ")
 print(paste(" quantile M=1000 ", sc_s[1000]))
 print(paste(" quantile M=5000 ", sc_s[5000]))
 print(paste(" quantile M=10000 ", sc_s[10000]))
+
+
+
+
+
 
