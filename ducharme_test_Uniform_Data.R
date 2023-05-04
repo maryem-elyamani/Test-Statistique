@@ -92,9 +92,12 @@ print("finished: ")
 print(paste(" quantile M=1000 ", sc_s[1000]))
 print(paste(" quantile M=5000 ", sc_s[5000]))
 print(paste(" quantile M=10000 ", sc_s[10000]))
-
-
-
+ggplot(data = data.frame(sc_s[100:M])) +
+  geom_line(aes(x = seq_along(sc_s[100:M]), y = sc_s[100:M], color = "Threshold value")) +
+  xlab("Iteration") +
+  ylab("Threshold value (sc)") +
+  ggtitle("Threshold value (sc) over iterations") +
+  scale_color_manual(values = c("Threshold value" = "magenta"))
 
 
 
