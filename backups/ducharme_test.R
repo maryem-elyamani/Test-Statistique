@@ -44,9 +44,11 @@ Base_Spline<-function(X){
 
 
 M_hat<-function(X){
+  
+  bsr = Base_Spline(X)
   M_x = matrix(0,nrow = num_splines, ncol = num_splines) 
   for (i in (1:n)){
-    M_x = M_x + Base_Spline(X)[i,] %*% t(Base_Spline(X)[i,]) 
+    M_x = M_x + bsr[i,] %*% t(bsr[i,]) 
   }
   M_x<-M_x/n
 }
@@ -69,3 +71,4 @@ stat<- function(X,Y,n) {
 
 
 stat(X,Y,n)
+
