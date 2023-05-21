@@ -74,12 +74,12 @@ D_dist_H0 <-function(M,n, q=.95){
   for (j in 1:M) 
   {
     # générer les données X et Y
-    X <- runif(n, 0, 1)
-    Y <- runif(n, 0, 1)
+    X <- rbeta(n, 1, 1)#runif(n, 0, 1)
+    Y <- rbeta(n, 1, 1)#runif(n, 0, 1)
     # calculer la statistique du test D pour ces données
     Dobs[j] <-D(X, Y)
     sc_s[j] <- quantile(Dobs[1:j], q)
-    #if (j %% 1000 == 0){print(paste("M:",j,"sc:",sc_s[j]))}
+    if (j %% 5000 == 0){print(paste("M:",j,"sc:",sc_s[j]))}
   }
   lst = list(sc_s=sc_s,Dobs=Dobs)
   lst
