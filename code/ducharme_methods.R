@@ -65,7 +65,7 @@ D<- function(X,Y,num_e=1000,d=1,k=2) {
 
 # creates M random samples of of D of size n, in the case, where H_0 is true 
 # returns samples, and scth quantiles for each iteration step 
-D_dist_H0 <-function(M,n, q=.95){
+D_dist_H0 <-function(M,n, q=.95, num_e = 10000){
   if (M >= 1000){print("Generating data, this might take some time ...")}
   
   Dobs <- numeric(M) # initialiser le vecteur Dobs
@@ -77,7 +77,7 @@ D_dist_H0 <-function(M,n, q=.95){
     X <- rbeta(n, 1, 1)#runif(n, 0, 1)
     Y <- rbeta(n, 1, 1)#runif(n, 0, 1)
     # calculer la statistique du test D pour ces données
-    Dobs[j] <-D(X, Y)
+    Dobs[j] <-D(X, Y, num_e = num_e) #3*n added for debug purpose
     sc_s[j] <- quantile(Dobs[1:j], q)
     if (j %% 5000 == 0){print(paste("M:",j,"sc:",sc_s[j]))}
   }

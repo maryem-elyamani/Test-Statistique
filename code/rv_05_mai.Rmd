@@ -55,12 +55,12 @@ D(X,Y, num_e = 1000, d=1, k=2)
 ```{r}
 source("./ducharme_methods.R")
 
-M = 100000
+M = 10000
 n = 50
-H0_data = D_dist_H0(M,n,q=0.95)
+H0_data = D_dist_H0(M,n,q=0.95,num_e = 1000000)
 
-
-
+#num_e: 10000 -> 32.8
+#num_e: 100000 ->  35.624
 
 print(paste(" quantile M=1000 ", H0_data$sc_s[1000]))
 print(paste(" quantile M=5000 ", H0_data$sc_s[5000]))
