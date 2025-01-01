@@ -55,9 +55,9 @@ D(X,Y, num_e = 1000, d=1, k=2)
 ```{r}
 source("./ducharme_methods.R")
 
-M = 10000
+M = 100000
 n = 50
-H0_data = D_dist_H0(M,n,0.95)
+H0_data = D_dist_H0(M,n,q=0.95)
 
 
 
@@ -65,15 +65,15 @@ H0_data = D_dist_H0(M,n,0.95)
 print(paste(" quantile M=1000 ", H0_data$sc_s[1000]))
 print(paste(" quantile M=5000 ", H0_data$sc_s[5000]))
 print(paste(" quantile M=10000 ", H0_data$sc_s[10000]))
-
+print(paste("all quantile ", quantile(H0_data$Dobs, .95)))
 ```
 
 
 ### Plot convergence of quantile
 
 ```{r}
-ggplot(data = data.frame(H0_data$sc_s[100:M])) +
-  geom_line(aes(x = seq_along(H0_data$sc_s[100:M]), y = H0_data$sc_s[100:M], color = "Threshold value")) +
+ggplot(data = data.frame(H0_data$sc_s[1000:M])) +
+  geom_line(aes(x = seq_along(H0_data$sc_s[1000:M]), y = H0_data$sc_s[1000:M], color = "Threshold value")) +
   xlab("Iteration") +
   ylab("Threshold value (sc)") +
   ggtitle("Threshold value (sc) over iterations") +
@@ -85,6 +85,7 @@ ggplot(data = data.frame(H0_data$sc_s[100:M])) +
 ```{r}
 
 density_data <- density(H0_data$Dobs)
-plot(density_data)
+plot(x=density_data$x[1:30], y=density_data$y[1:30],type = "l")
+
 ```
 
