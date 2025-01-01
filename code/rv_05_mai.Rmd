@@ -42,7 +42,7 @@ Y=c(0.65977, 0.0316515, 0.872726, 0.944487, 0.595143, 0.770168,
 D(X,Y, num_e = 1000, d=1, k=2)
 # BUG NOTE:
 # whan calculating M for equidistal points (x), should we then divide by num_e (1000)
-# or by n = 50. For me using num_e seemed more resonable, but then we obtained a different result
+# or by n = 50. For using num_e we obtained a different result
 
 
 
