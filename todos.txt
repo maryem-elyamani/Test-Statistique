@@ -1,4 +1,0 @@
-
-- comment code (if teacher ever wants to see it)
-- create readme
--
