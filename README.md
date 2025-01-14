@@ -1,7 +1,7 @@
 # Test Statistique
 
-- [Cliquez ici pour voir le *Rapport de Projet*](Soutenance_M1_SSD.pdf)  
-- [Cliquez ici pour voir le *Poster du Projet*](Construction_validation_et_calibration_d_un_test_statistique.pdf)
+- [Cliquez ici pour voir la *Presentation de Projet*](Soutenance_M1_SSD.pdf)  
+- [Cliquez ici pour voir le *Rapport du Projet*](Construction_validation_et_calibration_d_un_test_statistique.pdf)
 
 Notre projet vise à comprendre les étapes importantes pour développer, construire et valider un test statistique. En effet, nous allons étudier les différents tests pour les hypothèses \( H_0 : F = G \) contre \( H_1 \).
 
