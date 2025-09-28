@@ -42,17 +42,6 @@ M_hat<-function(X,num_splines,n){
 
 
 D<- function(X,Y,n) {
-  
-  # la matrice M
-  #M = matrix(0,nrow = num_splines, ncol = num_splines)
-  #for (i in (1:num_splines)){
-  #  for (j in (1:num_splines)){
-  #    M[i,j] = sum(Base_Spline(X)[,i]*Base_Spline(X)[,j])*(max(Base_Spline(X))-min(Base_Spline(X)))
-  #  }
-  #  M <- M/n
-  #}
-
-  
   Vecteur_1<-matrix(1,1,num_splines)
   vect_n<-n*Vecteur_1
   vect_n
